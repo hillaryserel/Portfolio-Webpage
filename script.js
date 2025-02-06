@@ -112,28 +112,30 @@ for(let i = 0; i < formInputs.length; i++) {
 
 // Enabling Page Navigation 
 
-c// Selecting navigation links and page sections
-const navigationLinks = document.querySelectorAll('[data-nav-link]');
-const pages = document.querySelectorAll('[data-page]');
+// Select all navigation buttons and page sections
+const navigationLinks = document.querySelectorAll("[data-nav-link]");
+const pages = document.querySelectorAll("[data-page]");
 
+// Loop through each navigation link
 navigationLinks.forEach(link => {
-    link.addEventListener('click', function() {
-        const targetPage = this.innerHTML.toLowerCase();
+    link.addEventListener("click", function () {
+        const targetPage = this.textContent.trim().toLowerCase(); // Get target page name
 
-        // Loop through pages to toggle active class
-        pages.forEach(page => {
-            if (page.dataset.page === targetPage) {
-                page.classList.add('active');
-            } else {
-                page.classList.remove('active');
-            }
-        });
+        // Remove 'active' class from all pages and navigation links
+        pages.forEach(page => page.classList.remove("active"));
+        navigationLinks.forEach(nav => nav.classList.remove("active"));
 
-        // Remove active class from all links, then add to the clicked one
-        navigationLinks.forEach(nav => nav.classList.remove('active'));
-        this.classList.add('active');
+        // Find and activate the target page
+        const targetElement = document.querySelector(`[data-page="${targetPage}"]`);
+        if (targetElement) {
+            targetElement.classList.add("active");
+        }
+
+        // Set active state for the clicked nav link
+        this.classList.add("active");
 
         // Scroll to top
         window.scrollTo(0, 0);
     });
 });
+
