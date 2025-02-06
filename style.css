@@ -233,9 +233,9 @@ article { display: none; }
 
 
 
-.avatar-box {
+.profile-box {
     background: var(--bg-gradient-onyx);
-    border-radius: 20px;
+    border-radius: 60px;
 }
 
 .info-content .name {
