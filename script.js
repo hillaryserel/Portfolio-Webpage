@@ -132,7 +132,7 @@ for(let i = 0; i < navigationLinks.length; i++) {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-    gsap.from("[data-section]", {
+    gsap.from("[data-page]", {
         opacity: 0,
         y: 50,
         duration: 1,
