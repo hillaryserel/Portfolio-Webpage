@@ -235,7 +235,7 @@ article { display: none; }
 
 .profile-box {
     background: var(--bg-gradient-onyx);
-    border-radius: 60px;
+    border-radius: 20px;
 }
 
 .info-content .name {
