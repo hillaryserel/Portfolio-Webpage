@@ -131,12 +131,3 @@ for(let i = 0; i < navigationLinks.length; i++) {
     });
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-    gsap.from("[data-page]", {
-        opacity: 0,
-        y: 50,
-        duration: 1,
-        stagger: 0.3, // Delays each section slightly
-        ease: "power3.out"
-    });
-});
